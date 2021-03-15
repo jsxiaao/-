@@ -1,19 +1,23 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 
-Sub firstVBA()
-MsgBox ("и材やVBA")
-End Sub
-Sub assRange()
-Range("A1").Value = "ExcelVBA"
-Range("B1").Value = "⊿ゴ祘Α翅"
-Cells(3, 3).Value = "莱赣琌硂妓"
-End Sub
-Sub Timedisplay()
-Cells(1, 1).Value = "讽玡丁"
-Range("B1").Value = Now()
+Sub week301()
+'Cells粂猭常ㄏノ计
+Cells(1, 5).Value = Cells(1, 1).Value + Cells(1, 3).Value 'Cells计
+Cells(2, 5).Value = Cells(1, 1).Value - Cells(1, 3).Value 'Cells计搭
+Cells(3, 5).Value = Cells(1, 1).Value * Cells(1, 3).Value 'Cells计
+Cells(4, 5).Value = Cells(1, 1).Value / Cells(1, 3).Value 'Cells计埃
+
+'Cells粂猭ㄏノ璣计
+Cells(1, "E").Value = Cells(1, "A").Value + Cells(1, "C").Value 'Cells璣计
+Cells(2, "E").Value = Cells(1, "A").Value - Cells(1, "C").Value 'Cells璣计搭
+Cells(3, "E").Value = Cells(1, "A").Value * Cells(1, "C").Value 'Cells璣计
+Cells(4, "E").Value = Cells(1, "A").Value / Cells(1, "C").Value 'Cells璣计埃
+
+'Range粂猭
+Range("E1").Value = Range("A1").Value + Range("C1").Value 'Range璣计
+Range("E2").Value = Range("A1").Value - Range("C1").Value 'Range璣计搭
+Range("E3").Value = Range("A1").Value * Range("C1").Value 'Range璣计
+Range("E4").Value = Range("A1").Value / Range("C1").Value 'Range璣计埃
 End Sub
 
-Sub Timeclear()
-Range("B1").Value = ""
-End Sub
