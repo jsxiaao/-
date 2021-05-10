@@ -1,23 +1,23 @@
 Attribute VB_Name = "Module1"
 Option Explicit
 
-Sub week301()
-'Cells粂猭常ㄏノ计
-Cells(1, 5).Value = Cells(1, 1).Value + Cells(1, 3).Value 'Cells计
-Cells(2, 5).Value = Cells(1, 1).Value - Cells(1, 3).Value 'Cells计搭
-Cells(3, 5).Value = Cells(1, 1).Value * Cells(1, 3).Value 'Cells计
-Cells(4, 5).Value = Cells(1, 1).Value / Cells(1, 3).Value 'Cells计埃
-
-'Cells粂猭ㄏノ璣计
-Cells(1, "E").Value = Cells(1, "A").Value + Cells(1, "C").Value 'Cells璣计
-Cells(2, "E").Value = Cells(1, "A").Value - Cells(1, "C").Value 'Cells璣计搭
-Cells(3, "E").Value = Cells(1, "A").Value * Cells(1, "C").Value 'Cells璣计
-Cells(4, "E").Value = Cells(1, "A").Value / Cells(1, "C").Value 'Cells璣计埃
-
-'Range粂猭
-Range("E1").Value = Range("A1").Value + Range("C1").Value 'Range璣计
-Range("E2").Value = Range("A1").Value - Range("C1").Value 'Range璣计搭
-Range("E3").Value = Range("A1").Value * Range("C1").Value 'Range璣计
-Range("E4").Value = Range("A1").Value / Range("C1").Value 'Range璣计埃
+Sub 玻夹癘龟策郎()
+Dim i, rowCnt As Integer
+Dim tagetValue As Integer
+tagetValue = CInt(InputBox("叫块夹癘(0-1000)"))
+Dim rangeStr As String
+rowCnt = Cells(Rows.Count, 1).End(xlUp).Row
+rangeStr = "b3:b" & rowCnt
+MsgBox "ヘ玡笲衡絛瞅" & rangeStr
+Range(rangeStr).Interior.Color = xlNone
+For i = 3 To rowCnt
+   If Cells(i, "B") > tagetValue Then
+   Cells(i, "B").Interior.Color = vbYellow
+   End If
+   
+   If Cells(i, "B") < tagetValue Then
+   Cells(i, "B").Interior.Color = vbBlue
+   End If
+   Next
+   Range("a1").CurrentRegion.Borders.LineStyle = xlContinuous
 End Sub
-
